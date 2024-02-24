@@ -11,6 +11,16 @@ package com.mycompany.plantarecicladora;
 public class PlantaRecicladora {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Pila pila = new Pila();
+        
+        residuo residuo1 = new residuo("Botella", "Plastico");
+        residuo residuo2 = new residuo("Caja", "Carton");
+        residuo residuo3 = new residuo("Bolsa", "Plastico");
+        
+        pila.apilar(residuo1);
+        pila.apilar(residuo2);
+        pila.apilar(residuo3);
+        
+        System.out.println(pila.imprimirPila());
     }
 }
