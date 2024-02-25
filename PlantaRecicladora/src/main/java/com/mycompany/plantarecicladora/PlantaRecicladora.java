@@ -12,6 +12,7 @@ public class PlantaRecicladora {
 
     public static void main(String[] args) {
         Pila pila = new Pila();
+        Cola cola = new Cola ();
         
         residuo residuo1 = new residuo("Botella", "Plastico");
         residuo residuo2 = new residuo("Caja", "Carton");
