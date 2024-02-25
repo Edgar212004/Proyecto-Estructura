@@ -23,5 +23,6 @@ public class PlantaRecicladora {
         pila.apilar(residuo3);
         
         System.out.println(pila.imprimirPila());
+        System.out.println(cola.imprimirCola());
     }
 }
