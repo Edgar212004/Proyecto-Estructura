@@ -87,4 +87,18 @@ public class Cola {
         
         return respuesta;
     }
+    
+
+    public void agregarR(residuo nuevoResiduo) {
+        NodoCola nuevoNodo = new NodoCola(nuevoResiduo);
+        if (esVacia()) {
+            frente = nuevoNodo;
+        } else {
+            ultimo.setSiguiente(nuevoNodo);
+        }
+        ultimo = nuevoNodo;
+    }
 }
+
+
+

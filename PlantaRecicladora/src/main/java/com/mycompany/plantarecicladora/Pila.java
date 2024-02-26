@@ -5,7 +5,6 @@
 package com.mycompany.plantarecicladora;
    import javax.swing.JOptionPane;
 
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -90,4 +89,12 @@ public class Pila {
         
         return respuesta;
     }
+   public void pasarDatosACola(Cola colaDestino) {
+    while (!esVacia()) {
+        residuo elemento = cima.getResiduoactual(); // Obtener el elemento de la cima
+        desapilar(); // Desapilar la cima de la pila
+        colaDestino.agregar(elemento); // Agregar el elemento a la cola
+    }
+}
+ 
 }
