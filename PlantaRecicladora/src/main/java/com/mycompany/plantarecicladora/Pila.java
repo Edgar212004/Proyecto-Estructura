@@ -93,7 +93,7 @@ public class Pila {
     while (!esVacia()) {
         residuo elemento = cima.getResiduoactual(); // Obtener el elemento de la cima
         desapilar(); // Desapilar la cima de la pila
-        colaDestino.agregar(elemento); // Agregar el elemento a la cola
+        colaDestino.agregarR(elemento); // Agregar el elemento a la cola
     }
 }
  
