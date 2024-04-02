@@ -14,7 +14,7 @@ package com.mycompany.plantarecicladora;
         
         Menu m = new Menu();
         m.setVisible(true); 
-
+         
     }
 }
 
