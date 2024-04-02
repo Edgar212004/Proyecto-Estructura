@@ -36,6 +36,7 @@ public class Menu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,30 +84,41 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Empacar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(259, 259, 259)
-                .addComponent(jLabel1)
-                .addGap(90, 270, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jButton5)
-                .addGap(30, 30, 30)
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(jButton7))
+                    .addComponent(jButton3))
+                .addGap(18, 18, 18)
                 .addComponent(jButton6)
-                .addGap(31, 31, 31)
-                .addComponent(jButton7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(68, 68, 68))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(47, 47, 47)
-                .addComponent(jButton2)
-                .addGap(62, 62, 62)
-                .addComponent(jButton4)
-                .addGap(128, 128, 128))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel1))
+                        .addGap(64, 64, 64)
+                        .addComponent(jButton4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,15 +127,17 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
                     .addComponent(jButton4)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton2))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton6)
                     .addComponent(jButton7))
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(jButton1)
+                .addContainerGap(197, Short.MAX_VALUE))
         );
 
         pack();
@@ -206,10 +220,11 @@ public class Menu extends javax.swing.JFrame {
         ListaSimple l = new ListaSimple();
         
         
-        ProductoReciclado producto1 = new ProductoReciclado(1, "Anteojos", "Platico", 1001, "2024-03-31");
-        ProductoReciclado producto2 = new ProductoReciclado(2, "Tenedor", "Metal", 1002, "2024-03-31");
-        ProductoReciclado producto3 = new ProductoReciclado(3, "LLanta", "Hule", 1003, "2024-03-31");
-        ProductoReciclado producto4 = new ProductoReciclado(4, "Martillo", "Metal", 1004, "2024-03-31");
+        ProductoReciclado producto1 = new ProductoReciclado(1, "Anteojos", "Plastico", "1001", "2024-03-31");
+        ProductoReciclado producto2 = new ProductoReciclado(2, "Tenedor", "Metal", "1002", "2024-03-31");
+        ProductoReciclado producto3 = new ProductoReciclado(3, "LLanta", "Hule", "1003", "2024-03-31");
+        ProductoReciclado producto4 = new ProductoReciclado(3, "Martillo", "Metal", "1004", "2024-03-31");
+        
 
         l.insertar(producto1);
         l.insertar(producto2);
@@ -240,6 +255,30 @@ public class Menu extends javax.swing.JFrame {
         
         System.out.println(cola.desencolar());
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ListaSimple l = new ListaSimple();
+        ListaSimpleCircular LSC = new ListaSimpleCircular();
+        
+        ProductoReciclado producto1 = new ProductoReciclado(1, "Anteojos", "Platico", "1001", "2024-03-31");
+        ProductoReciclado producto2 = new ProductoReciclado(2, "Tenedor", "Metal", "1002", "2024-03-31");
+        ProductoReciclado producto3 = new ProductoReciclado(3, "LLanta", "Hule", "1003", "2024-03-31");
+        ProductoReciclado producto4 = new ProductoReciclado(4, "Martillo", "Metal", "1004", "2024-03-31");
+
+        l.insertar(producto1);
+        l.insertar(producto2);
+        l.insertar(producto3);
+        l.insertar(producto4);
+        
+        System.out.println(l.toString());
+        
+       
+        System.out.println(LSC.toString());
+        
+        LSC.empacar(l);
+        
+        System.out.println(LSC.toString());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +316,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

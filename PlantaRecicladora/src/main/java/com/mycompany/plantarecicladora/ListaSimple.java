@@ -56,7 +56,7 @@ public class ListaSimple {
             }
         }
     }
-
+    
     @Override
     public String toString() {
         StringBuilder respuesta = new StringBuilder("Lista de productos reciclados:\n");

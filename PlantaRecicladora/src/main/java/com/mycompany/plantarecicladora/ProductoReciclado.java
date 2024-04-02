@@ -7,13 +7,13 @@ public class ProductoReciclado extends residuo{
      private int idProducto;
     private String descripcion;
     private String materialBase;
-    private int numeroLote;
+    private String numeroLote;
     private String fechaProduccion;
 
     public ProductoReciclado() {
     }
 
-    public ProductoReciclado(int idProducto, String descripcion, String materialBase, int numeroLote, String fechaProduccion) {
+    public ProductoReciclado(int idProducto, String descripcion, String materialBase, String numeroLote, String fechaProduccion) {
         this.idProducto = idProducto;
         this.descripcion = descripcion;
         this.materialBase = materialBase;
@@ -45,11 +45,11 @@ public class ProductoReciclado extends residuo{
         this.materialBase = materialBase;
     }
 
-    public int getNumeroLote() {
+    public String getNumeroLote() {
         return numeroLote;
     }
 
-    public void setNumeroLote(int numeroLote) {
+    public void setNumeroLote(String numeroLote) {
         this.numeroLote = numeroLote;
     }
 
@@ -61,17 +61,16 @@ public class ProductoReciclado extends residuo{
         this.fechaProduccion = fechaProduccion;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("ProductoReciclado");
-        sb.append(" id=").append(idProducto);
-        sb.append(", descripcion=").append(descripcion);
-        sb.append(", materialBase=").append(materialBase);
-        sb.append(", numeroLote=").append(numeroLote);
-        sb.append(", fechaProduccion=").append(fechaProduccion);
-       
-        return sb.toString();
-    }
-    
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("ProductoReciclado");
+            sb.append(" id= ").append(idProducto);
+            sb.append(", descripcion= ").append(descripcion);
+            sb.append(", materialBase= ").append(materialBase);
+            sb.append(", numeroLote= ").append(numeroLote);
+            sb.append(", fechaProduccion= ").append(fechaProduccion);
+
+            return sb.toString();
+        }
 }
