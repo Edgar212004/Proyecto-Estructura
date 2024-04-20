@@ -37,6 +37,8 @@ public class Menu extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,6 +93,20 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setText("Registrar camiones");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Registrar camiones con productos ");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,26 +115,30 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addComponent(jButton7))
-                    .addComponent(jButton3))
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addGap(68, 68, 68))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel1))
-                        .addGap(64, 64, 64)
-                        .addComponent(jButton4))
+                            .addComponent(jButton5)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton7)
+                                    .addComponent(jLabel1))
+                                .addGap(319, 319, 319))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton8)
+                                .addGap(84, 84, 84)
+                                .addComponent(jButton9)
+                                .addGap(81, 81, 81))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton3)
+                        .addGap(158, 158, 158)
+                        .addComponent(jButton2)
+                        .addGap(128, 128, 128)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton6)
+                            .addComponent(jButton4))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +156,10 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton6)
                     .addComponent(jButton7))
                 .addGap(56, 56, 56)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton8)
+                    .addComponent(jButton9))
                 .addContainerGap(197, Short.MAX_VALUE))
         );
 
@@ -280,6 +303,45 @@ public class Menu extends javax.swing.JFrame {
         System.out.println(LSC.toString());
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+                 // Crear la lista doble de camiones
+        ListaDobleCamiones listaCamiones = new ListaDobleCamiones();
+
+        // Crear algunos camiones con productos asociados
+        Camion camion1 = new Camion(1, "ABC123", 10000, new ListaSimpleCircular());
+        
+
+        Camion camion2 = new Camion(2, "DEF456", 20000, new ListaSimpleCircular());
+        
+        // Insertar camiones en la lista
+        listaCamiones.inserta(camion1);
+        listaCamiones.inserta(camion2);
+
+        // Imprimir la lista de camiones y sus productos asociados
+        System.out.println(listaCamiones.toString());
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+                // Crear la lista doble de camiones
+        ListaDobleCamiones listaCamiones = new ListaDobleCamiones();
+
+        // Crear algunos camiones con productos asociados
+        Camion camion1 = new Camion(1, "ABC123", 10000, new ListaSimpleCircular());
+        camion1.getProductos().insertar(new ProductoReciclado(1, "Anteojos", "Platico", "1001", "2024-03-31"));
+        camion1.getProductos().insertar(new ProductoReciclado(2, "Tenedor", "Metal", "1002", "2024-03-31"));
+
+        Camion camion2 = new Camion(2, "DEF456", 20000, new ListaSimpleCircular());
+        camion2.getProductos().insertar(new ProductoReciclado(3, "LLanta", "Hule", "1003", "2024-03-31"));
+        camion2.getProductos().insertar(new ProductoReciclado(4, "Martillo", "Metal", "1004", "2024-03-31"));
+        // Insertar camiones en la lista
+        listaCamiones.inserta(camion1);
+        listaCamiones.inserta(camion2);
+
+        // Imprimir la lista de camiones y sus productos asociados
+        System.out.println(listaCamiones.toString());
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,6 +385,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.plantarecicladora;
 
-/**
- *
- * @author Moises
- */
 public class ListaDobleCamiones {
     private NodoListaDoble cabeza;
     private NodoListaDoble ultimo;
@@ -68,31 +61,29 @@ public class ListaDobleCamiones {
         }
     }
 
-    @Override
-    public String toString() {
-        String respuesta = "Lista doble circular: \n";
-        
-        if(cabeza == null)
-        {
-            respuesta += "Lista vacía";
-        }
-        else
-        {
-            NodoListaDoble aux = cabeza;
-            
-            respuesta += aux.toString() + "\n";
-            
-            aux = aux.getSiguiente();
-            
-            while(aux != cabeza)
-            {
-                respuesta += aux.toString() + "\n";
-                aux = aux.getSiguiente();
+ @Override
+public String toString() {
+    StringBuilder respuesta = new StringBuilder("Lista doble circular de camiones:\n");
+
+    if (cabeza == null) {
+        respuesta.append("Lista vacía\n");
+    } else {
+        NodoListaDoble aux = cabeza;
+
+        do {
+            respuesta.append(aux).append("\n");
+            // Verificar si el camión tiene productos asociados
+            if (aux.getCamion().getProductos() != null) {
+                respuesta.append("Productos asociados:\n");
+                respuesta.append(aux.getCamion().getProductos()).append("\n");
             }
-        }
-        
-        return respuesta;
+            aux = aux.getSiguiente();
+        } while (aux != cabeza);
     }
+
+    return respuesta.toString();
+}
+
     
     
 
