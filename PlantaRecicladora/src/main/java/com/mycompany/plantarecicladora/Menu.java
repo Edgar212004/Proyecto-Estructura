@@ -39,6 +39,10 @@ public class Menu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        VerRutas = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        FusionarRutas = new javax.swing.JButton();
+        ComerciosPequeños = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,6 +111,29 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        VerRutas.setText("Ver Rutas");
+        VerRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerRutasActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Rutas de Camiones");
+
+        FusionarRutas.setText("Fusionar Rutas");
+        FusionarRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FusionarRutasActionPerformed(evt);
+            }
+        });
+
+        ComerciosPequeños.setText("Rutas Pequeños Comercios");
+        ComerciosPequeños.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComerciosPequeñosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,7 +155,9 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton8)
                                 .addGap(84, 84, 84)
-                                .addComponent(jButton9)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ComerciosPequeños)
+                                    .addComponent(jButton9))
                                 .addGap(81, 81, 81))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3)
@@ -139,6 +168,14 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jButton6)
                             .addComponent(jButton4))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(VerRutas)
+                .addGap(89, 89, 89)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(FusionarRutas)
+                    .addComponent(jLabel2))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +197,14 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton8)
                     .addComponent(jButton9))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VerRutas)
+                    .addComponent(FusionarRutas)
+                    .addComponent(ComerciosPequeños))
+                .addGap(75, 75, 75))
         );
 
         pack();
@@ -179,7 +223,7 @@ public class Menu extends javax.swing.JFrame {
         pila.apilar(residuo3);
         pila.apilar(residuo4);
         
-        System.out.println("Se apilaron los residuos");
+        System.out.println("\nSe apilaron los residuos");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -215,7 +259,7 @@ public class Menu extends javax.swing.JFrame {
         
         pila.pasarDatosACola(cola);
         
-        System.out.println("Se transladaron los residuos");
+        System.out.println("\nSe transladaron los residuos");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -236,6 +280,8 @@ public class Menu extends javax.swing.JFrame {
         
         pila.pasarDatosACola(cola);
          
+        
+        System.out.println("Residuos\n");
         System.out.println(cola.imprimirCola());
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -253,7 +299,10 @@ public class Menu extends javax.swing.JFrame {
         l.insertar(producto2);
         l.insertar(producto3);
         l.insertar(producto4);
-
+        
+        
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println(l);
         
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -275,7 +324,7 @@ public class Menu extends javax.swing.JFrame {
         pila.pasarDatosACola(cola);
          
         System.out.println(cola.imprimirCola());
-        
+        System.out.println("\nCola Vacia");
         System.out.println(cola.desencolar());
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -293,6 +342,8 @@ public class Menu extends javax.swing.JFrame {
         l.insertar(producto3);
         l.insertar(producto4);
         
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println(l.toString());
         
        
@@ -339,9 +390,129 @@ public class Menu extends javax.swing.JFrame {
         listaCamiones.inserta(camion2);
 
         // Imprimir la lista de camiones y sus productos asociados
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println(listaCamiones.toString());
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void VerRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerRutasActionPerformed
+         
+        ArbolBinario a1 = new ArbolBinario();
+        
+        a1.insertar("Estación Atlántico", 40);
+        a1.insertar("Estación Heredia", 20);
+        a1.insertar("San Joaquín", 15);
+        a1.insertar("San Francisco", 25);
+        a1.insertar("Estación Alajuela", 60);
+        a1.insertar("Rio Segundo", 55);
+        a1.insertar("Santa Marta", 65);
+        
+        
+        ArbolBinario a2 = new ArbolBinario();
+        
+        a2.insertar("Estación Pacífico", 80);
+        a2.insertar("Estación Atlántico", 40);
+        a2.insertar("CFIA", 30);
+        a2.insertar("San Pedro", 70);
+        a2.insertar("Estación Cartago", 90);
+        a2.insertar("Tres Rios", 95);
+        
+        // Imprimir recorridos de la Ruta de Occidente
+        System.out.println("\n**********Rutas de Occidente**********");
+        System.out.println("\nRecorrido Preorden de la Ruta de Occidente:");
+        a1.recorridoPreorden(a1.raiz);
+        System.out.println("\nRecorrido Inorden de la Ruta de Occidente:");
+        a1.recorridoInorden(a1.raiz);
+        System.out.println("\nRecorrido Postorden de la Ruta de Occidente:");
+        a1.recorridoPostorden(a1.raiz);
+
+        // Imprimir recorridos de la ruta de Oriente
+        System.out.println("\n**********Rutas de Oriente**********");
+        System.out.println("\nRecorrido Preorden de la Ruta de Oriente:");
+        a2.recorridoPreorden(a2.raiz);
+        System.out.println("\nRecorrido Inorden de la Ruta de Oriente:");
+        a2.recorridoInorden(a2.raiz);
+        System.out.println("\nRecorrido Postorden de la Ruta de Oriente:");
+        a2.recorridoPostorden(a2.raiz);
+        
+    }//GEN-LAST:event_VerRutasActionPerformed
+
+    private void FusionarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FusionarRutasActionPerformed
+        
+        ArbolBinario a1 = new ArbolBinario();
+        
+        a1.insertar("Estación Atlántico", 40);
+        a1.insertar("Estación Heredia", 20);
+        a1.insertar("San Joaquín", 15);
+        a1.insertar("San Francisco", 25);
+        a1.insertar("Estación Alajuela", 60);
+        a1.insertar("Rio Segundo", 55);
+        a1.insertar("Santa Marta", 65);
+        
+        ArbolBinario a2 = new ArbolBinario();
+        
+        a2.insertar("Estación Pacífico", 80);
+        a2.insertar("Estación Atlántico", 40);
+        a2.insertar("CFIA", 30);
+        a2.insertar("San Pedro", 70);
+        a2.insertar("Estación Cartago", 90);
+        a2.insertar("Tres Rios", 95);
+        
+        //Fusión de arboles
+        a1.fusionarCon(a2);
+        
+        // Realizar un recorrido para ver el resultado de la fusión
+
+        System.out.println("\n**********Rutas Fusionadas**********");
+        System.out.println("\nRecorrido Preorden de ambas Rutas:");
+        a1.recorridoPreorden(a1.raiz);
+        System.out.println("\nRecorrido Inorden de ambas Rutas:");
+        a1.recorridoInorden(a1.raiz);
+        System.out.println("\nRecorrido Inorden de ambas Rutas:");
+        a1.recorridoPostorden(a1.raiz);
+
+        
+        
+    }//GEN-LAST:event_FusionarRutasActionPerformed
+
+    private void ComerciosPequeñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComerciosPequeñosActionPerformed
+        
+        ArbolBinario a1 = new ArbolBinario();
+        
+        a1.insertar("Estación Atlántico", 40);
+        a1.insertar("Estación Heredia", 20);
+        a1.insertar("San Joaquín", 15);
+        a1.insertar("San Francisco", 25);
+        a1.insertar("Estación Alajuela", 60);
+        a1.insertar("Rio Segundo", 55);
+        a1.insertar("Santa Marta", 65);
+        
+        ArbolBinario a2 = new ArbolBinario();
+        
+        a2.insertar("Estación Pacífico", 80);
+        a2.insertar("Estación Atlántico", 40);
+        a2.insertar("CFIA", 30);
+        a2.insertar("San Pedro", 70);
+        a2.insertar("Estación Cartago", 90);
+        a2.insertar("Tres Rios", 95);
+
+        // Fusionar a1 con a2
+        a1.fusionarCon(a2);
+
+        // Obtener el árbol de pequeños comercios
+        ArbolBinario arbolPequenosComercios = a1.obtenerArbolDePequenosComercios();
+
+        //Imprimir recorrido inorden del árbol de pequeños comercios para verificar
+        System.out.println("\n**********Rutas de los Pequeños Comercios**********");
+        System.out.println("\nRecorrido Preorden de los Pequeños Comercios:");
+        arbolPequenosComercios.recorridoPreorden(arbolPequenosComercios.raiz);
+        System.out.println("\nRecorrido Inorden de los Pequeños Comercios:");
+        arbolPequenosComercios.recorridoInorden(arbolPequenosComercios.raiz);
+        System.out.println("\nRecorrido Postorden de los Pequeños Comercios:");
+        arbolPequenosComercios.recorridoPostorden(arbolPequenosComercios.raiz);
+        System.out.println("\n");
+    }//GEN-LAST:event_ComerciosPequeñosActionPerformed
+        
     /**
      * @param args the command line arguments
      */
@@ -378,6 +549,9 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ComerciosPequeños;
+    private javax.swing.JButton FusionarRutas;
+    private javax.swing.JButton VerRutas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -388,5 +562,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

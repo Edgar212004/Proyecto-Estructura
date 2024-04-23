@@ -20,6 +20,10 @@ public class NodoArbol {
         this.izquierdo = null;
         this.derecho = null;
     }
+    
+    public String getNombre() {
+    return nombre;
+    }
 
     public int getValor() {
         return valor;
